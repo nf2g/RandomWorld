@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;//чтобы не запускалось оформление по умолчанию
+    ViewBag.Title = "Игра";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Игра</title>
+
+    <style>
+        .center {
+            width: 600px; /* Ширина элемента в пикселах */
+            padding: 10px; /* Поля вокруг текста */
+            margin: auto; /* Выравниваем по центру */
+            background: #fc0; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+
+        <p>Загаданное слово: @ViewBag.Random</p>
+        <!--p><h1>Попытка № @(ViewBag.Попытка + 1)</h1></p-->
+        <p><h1>Я думаю это</h1></p>
+
+        <form method="post" action="~/Home/Index">
+
+            <input type="hidden" value="@ViewBag.Random" name="WordSet.Rand" />
+            <p>
+                <input type="text" autocomplete="off" name="WordSet.Word" />
+                <input type="submit" value="Отправить" />
+            </p>
+
+        </form>
+
+        @if (@ViewBag.Попытка != 0)
+        {
+            if (@ViewBag.Yes)
+            {
+                <h1>Вы отгадали слово! Отгадайте новое</h1>
+            }
+            foreach (var a in ViewBag.date)
+            {
+                //<h1>Попытка, @a.Num</h1> // Для проверки
+                <h1>Вы, @a.Word</h1>
+                <h1>Система, @a.answer</h1>
+            }
+        }
+
+    </div>
+</body>
+</html>
