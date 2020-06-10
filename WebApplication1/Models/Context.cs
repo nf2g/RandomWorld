@@ -7,8 +7,8 @@ namespace WebApplication1.Models
         public DbSet<WordSet> WordSets { get; set; }
     }
 
-    /*//для пересоздания базы данных
-    public class MyContextInitializer : DropCreateDatabaseAlways<Context>//пересоздает базу данных
+    //для пересоздания базы данных
+    /*public class MyContextInitializer : DropCreateDatabaseAlways<Context>//пересоздает базу данных
     {
 
     }*/

@@ -1,6 +1,9 @@
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
@@ -8,7 +11,7 @@ namespace WebApplication1
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer<Context>(new MyContextInitializer());//инициализация базы данных при запуске
+            //Database.SetInitializer<Models.Context>(new MyContextInitializer());//инициализация базы данных при запуске
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
